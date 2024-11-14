@@ -8,7 +8,7 @@
         window.onload = function() {
             const ciag = prompt("Wpisz ciąg znaków");
             alert("Ciąg znaków: " + ciag);
-
+            document.getElementById("ciagTekst").textContent = "Ciąg znaków: " + ciag;
             const znak = prompt("Wpisz znak, którego chcesz wyszukać w ciągu:");
 
             if (znak && znak.length === 1) { 
@@ -19,11 +19,13 @@
                         indeksy.push(i);
                     }
                 }
-
+                const output = document.getElementById("output");
                 if (indeksy.length > 0) {
                     alert("Znak '" + znak + "' znajduje się na indeksach: " + indeksy.join(", "));
+                    output.textContent = "Znak '" + znak + "' znajduje się na indeksie: " + indeksy.join(", ");
                 } else {
                     alert("Znak '" + znak + "' nie występuje w ciągu.");
+                    output.textContent = "Znak '" + znak + "' nie występuje w ciągu. ";
                 }
             } else {
                 alert("Nieprawidłowy znak! Proszę wpisać tylko jeden znak.");
@@ -32,5 +34,7 @@
     </script>
 </head>
 <body>
+    <p id="ciagTekst"></p>
+    <p id="output"></p>
 </body>
 </html>
