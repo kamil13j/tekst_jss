@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wyszukiwanie znaku</title>
+    <title>string</title>
     <script>
         window.onload = function() {
             const ciag = prompt("Wpisz ciąg znaków");
@@ -12,17 +12,17 @@
             const znak = prompt("Wpisz znak, którego chcesz wyszukać w ciągu:");
 
             if (znak && znak.length === 1) { 
-                let indeksy = [];
+                let indeks = [];
 
                 for (let i = 0; i < ciag.length; i++) {
                     if (ciag[i] === znak) {
-                        indeksy.push(i);
+                        indeks.push(i);
                     }
                 }
                 const output = document.getElementById("output");
-                if (indeksy.length > 0) {
-                    alert("Znak '" + znak + "' znajduje się na indeksach: " + indeksy.join(", "));
-                    output.textContent = "Znak '" + znak + "' znajduje się na indeksie: " + indeksy.join(", ");
+                if (indeks.length > 0) {
+                    alert("Znak '" + znak + "' znajduje się na indeksie: " + indeks.join(", "));
+                    output.textContent = "Znak '" + znak + "' znajduje się na indeksie: " + indeks.join(", ");
                 } else {
                     alert("Znak '" + znak + "' nie występuje w ciągu.");
                     output.textContent = "Znak '" + znak + "' nie występuje w ciągu. ";
