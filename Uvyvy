@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wyszukiwanie znaku</title>
+    <script>
+        window.onload = function() {
+            // Definiujemy ciąg znaków
+            const ciag = "Przykładowy ciąg znaków do przeszukania.";
+
+            // Wyświetlamy okienko z ciągiem znaków
+            alert("Ciąg znaków: " + ciag);
+
+            // Pobieramy znak od użytkownika
+            const znak = prompt("Wpisz znak, którego chcesz wyszukać w ciągu:");
+
+            if (znak && znak.length === 1) { // Sprawdzamy, czy użytkownik podał jeden znak
+                let indeksy = [];
+
+                // Szukamy indeksów znaku w ciągu
+                for (let i = 0; i < ciag.length; i++) {
+                    if (ciag[i] === znak) {
+                        indeksy.push(i);
+                    }
+                }
+
+                // Wyświetlamy wynik
+                if (indeksy.length > 0) {
+                    alert("Znak '" + znak + "' znajduje się na indeksach: " + indeksy.join(", "));
+                } else {
+                    alert("Znak '" + znak + "' nie występuje w ciągu.");
+                }
+            } else {
+                alert("Nieprawidłowy znak! Proszę wpisać tylko jeden znak.");
+            }
+        };
+    </script>
+</head>
+<body>
+</body>
+</html>
