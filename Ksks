@@ -1,0 +1,23 @@
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Poproszenie użytkownika o podanie słowa do wyszukania
+    let searchWord = prompt("Podaj słowo do wyszukania na stronie:");
+
+    if (searchWord) {
+      // Pobieranie całej zawartości HTML jako tekst
+      let pageText = document.body.innerText;
+
+      // Tworzenie wyrażenia regularnego do wyszukiwania słowa (bez uwzględnienia wielkości liter)
+      let regex = new RegExp(`\\b${searchWord}\\b`, "gi");
+
+      // Dopasowania
+      let matches = pageText.match(regex);
+      let matchCount = matches ? matches.length : 0;
+
+      // Wyświetlanie liczby wystąpień
+      alert(`Słowo "${searchWord}" występuje na stronie ${matchCount} razy.`);
+    } else {
+      alert("Nie podano żadnego słowa.");
+    }
+  });
+</script>
